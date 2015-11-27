@@ -9,6 +9,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('new', {
     url: '/new',
     templateUrl: 'templates/new.html',
-    controller: 'newCtrl'
+    controller: 'NewCtrl'
   });
 });

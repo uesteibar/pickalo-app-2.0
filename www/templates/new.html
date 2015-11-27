@@ -1,19 +1,21 @@
 <ion-view title="Create a new pickalo">
   <ion-content padding="true">
-    <label class="item item-input item-stacked-label">
-      <span class="input-label">Write a question</span>
-      <input type="text" placeholder="e.g where should we have dinner?" ng-model="input.question">
-    </label>
-
-    <div class="item item-input-inset">
-      <label class="item-input-wrapper item-stacked-label">
-        <span class="input-label">Add some options (at least 2)</span>
-        <input type="text" placeholder="e.g Bulli restaurant" ng-model="input.newOption">
+    <div class="card">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Write a question</span>
+        <input type="text" placeholder="e.g where should we have dinner?" ng-model="input.question">
       </label>
-      <button ng-click="addOption(input.newOption)" class="button button-icon icon ion-plus-round"></button>
     </div>
 
-    <ul class="list">
+
+    <div class="list card">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper item-stacked-label">
+          <span class="input-label">Add some options (at least 2)</span>
+          <input type="text" placeholder="e.g Bulli restaurant" ng-model="input.newOption">
+        </label>
+        <button ng-click="addOption(input.newOption)" class="button button-icon icon ion-plus-round"></button>
+      </div>
       <li class="item item-divider">
         Options
       </li>
@@ -21,12 +23,12 @@
         {{option}}
         <button class="button button-icon icon ion-minus-round"></button>
       </li>
-    </ul>
+    </div>
 
   </ion-content>
 
     <div style="position: absolute; bottom: 0px; width: 100%">
-      <button class="button button-block button-positive">
+      <button ng-click="submit()" class="button button-block button-positive">
         Submit
       </button>
     </div>
