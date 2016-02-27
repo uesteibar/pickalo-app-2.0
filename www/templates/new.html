@@ -1,4 +1,8 @@
 <ion-view title="Create a new pickalo">
+  <ion-nav-buttons side="right">
+      <button class="button button-clear icon ion-android-done" ng-click="submit()">
+      </button>
+    </ion-nav-buttons>
   <ion-content padding="true">
     <div class="card">
       <label class="item item-input item-stacked-label">
@@ -14,22 +18,16 @@
           <span class="input-label">Add some options (at least 2)</span>
           <input type="text" placeholder="e.g Bulli restaurant" ng-model="input.newOption">
         </label>
-        <button ng-click="addOption(input.newOption)" class="button button-icon icon ion-plus-round"></button>
+        <button ng-click="addOption(input.newOption)" class="button button-icon icon ion-android-add"></button>
       </div>
       <li class="item item-divider">
         Options
       </li>
       <li class="item item-button-right" ng-repeat="option in options">
         {{option}}
-        <button ng-click="deleteOption($index)" class="button button-icon icon ion-minus-round"></button>
+        <button ng-click="deleteOption($index)" class="button button-icon icon ion-android-remove"></button>
       </li>
     </div>
 
   </ion-content>
-
-  <div style="position: absolute; bottom: 0px; width: 100%">
-    <button ng-click="submit()" class="button button-block button-positive">
-      Submit
-    </button>
-  </div>
 </ion-view>
