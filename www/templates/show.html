@@ -8,10 +8,11 @@
       </li>
     </div>
 
-    <div class="card">
-      <h3>
-        {{pickalo.form.link}}
-      </h3>
-    </div>
+    <button ng-click="refreshPickalo()" class="button button-block button-positive icon-left ion-refresh">
+      Refresh
+    </button>
+    <button ng-click="share(pickalo)" class="button button-block button-positive icon-left ion-android-share-alt">
+      Share
+    </button>
   </ion-content>
 </ion-view>

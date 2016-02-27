@@ -1,9 +1,9 @@
 app.controller('ShowCtrl',
-  function($scope, $stateParams, PickaloApiService) {
+  function($scope, $stateParams, $cordovaSocialSharing, PickaloApiService) {
     var id = 1;
 
     var init = function() {
-      fetchPickalo(showPickalo);
+      $scope.refreshPickalo();
     };
 
     var fetchPickalo = function(onSuccess) {
@@ -16,6 +16,14 @@ app.controller('ShowCtrl',
     var showPickalo = function(res) {
       console.log(res);
       $scope.pickalo = res;
+    };
+
+    $scope.refreshPickalo = function() {
+      fetchPickalo(showPickalo);
+    };
+
+    $scope.share = function (pickalo) {
+      $cordovaSocialSharing.share(pickalo.form.question, 'Vote for this!', null, pickalo.form.link);
     };
 
     init();
