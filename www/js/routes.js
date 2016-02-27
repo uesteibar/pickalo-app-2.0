@@ -11,4 +11,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/new.html',
     controller: 'NewCtrl'
   });
+
+  $stateProvider.state('show', {
+    url: '/show/:id',
+    templateUrl: 'templates/show.html',
+    controller: 'ShowCtrl'
+  });
 });

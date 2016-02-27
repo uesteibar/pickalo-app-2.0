@@ -21,15 +21,15 @@
       </li>
       <li class="item item-button-right" ng-repeat="option in options">
         {{option}}
-        <button class="button button-icon icon ion-minus-round"></button>
+        <button ng-click="deleteOption($index)" class="button button-icon icon ion-minus-round"></button>
       </li>
     </div>
 
   </ion-content>
 
-    <div style="position: absolute; bottom: 0px; width: 100%">
-      <button ng-click="submit()" class="button button-block button-positive">
-        Submit
-      </button>
-    </div>
+  <div style="position: absolute; bottom: 0px; width: 100%">
+    <button ng-click="submit()" class="button button-block button-positive">
+      Submit
+    </button>
+  </div>
 </ion-view>

@@ -1,5 +1,5 @@
 app.controller('NewCtrl',
-  function($scope, PickaloApiService) {
+  function($scope, $state, PickaloApiService) {
     $scope.options = ['somewhere'];
     $scope.input = {
       question: '',
@@ -19,8 +19,10 @@ app.controller('NewCtrl',
       };
 
       var promise = PickaloApiService.postPickalo(params);
+
       promise.then(function(res) {
         console.log(res);
+        $state.go('show', { id: res['form']['id']})
       });
     };
   }

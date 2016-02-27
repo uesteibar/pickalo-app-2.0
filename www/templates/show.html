@@ -1,0 +1,17 @@
+<ion-view title="Results for your Pickalo">
+  <ion-content padding="true">
+    <h1>{{pickalo.form.question}}</h1>
+
+    <div class="list card">
+      <li class="item" ng-repeat="answer in pickalo.answers">
+        {{answer.option}} <span class="badge badge-assertive">{{answer.votes}}</span>
+      </li>
+    </div>
+
+    <div class="card">
+      <h3>
+        {{pickalo.form.link}}
+      </h3>
+    </div>
+  </ion-content>
+</ion-view>

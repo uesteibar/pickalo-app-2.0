@@ -13,8 +13,21 @@ app.service('PickaloApiService',
           }).error(function (err) {
               deferred.reject(err);
           });
+
+        return deferred.promise;
+      },
+      getPickalo: function(id) {
+        var deferred = q.defer();
+
+        $http.get(host + '/forms/' + id)
+          .success(function (data) {
+              deferred.resolve(data);
+          }).error(function (err) {
+              deferred.reject(err);
+          });
+
         return deferred.promise;
       }
-    };
+    }
   }
 );
