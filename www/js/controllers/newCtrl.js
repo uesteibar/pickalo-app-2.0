@@ -1,6 +1,6 @@
 app.controller('NewCtrl',
   function($scope, $state, PickaloApiService) {
-    $scope.options = ['somewhere'];
+    $scope.options = [];
     $scope.input = {
       question: '',
       newOption: ''
@@ -10,6 +10,10 @@ app.controller('NewCtrl',
       console.log(newOption);
       $scope.options.push(newOption);
       $scope.input.newOption = '';
+    };
+
+    $scope.deleteOption = function(index) {
+      $scope.options = $scope.options.slice(index, 0);
     };
 
     $scope.submit = function() {
