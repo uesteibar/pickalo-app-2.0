@@ -1,6 +1,6 @@
 app.service('PickaloApiService',
   function ($http, $q) {
-    var host = 'https://4c76e48d.ngrok.com';
+    var host = 'http://pickalo.herokuapp.com';
     var q = $q;
 
     return {
