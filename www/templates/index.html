@@ -1,5 +1,8 @@
 <ion-view title="Results for your Pickalo">
   <ion-content padding="true">
+    <div class="col text-center">
+      <ion-spinner ng-show="loading"></ion-spinner>
+    </div>
     <div class="list">
       <a ng-repeat="pickalo in pickalos" class="item item-icon-right" href="#/show/{{pickalo.form.id}}">
         <h2>{{pickalo.form.question}}</h2>

@@ -13,10 +13,12 @@ app.controller('ShowCtrl',
 
     var showPickalo = function(res) {
       console.log(res);
+      $scope.loading = false;
       $scope.pickalo = res;
     };
 
     $scope.refreshPickalo = function() {
+      $scope.loading = true;
       fetchPickalo(showPickalo);
     };
 

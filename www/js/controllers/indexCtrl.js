@@ -16,10 +16,12 @@ app.controller('IndexCtrl',
         console.log(res[i]);
       }
 
+      $scope.loading = false;
       $scope.pickalos = res;
     };
 
     $scope.refreshPickalos = function() {
+      $scope.loading = true;
       var allPickalos = LocalStorageService.fetchAllPickalos();
       var ids = [];
       for (var i = 0; i < allPickalos.length; i++) {

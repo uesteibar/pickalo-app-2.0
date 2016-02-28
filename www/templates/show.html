@@ -1,8 +1,12 @@
-<ion-view title="Results for your Pickalo">
+<ion-view title="Your Pickalos">
   <ion-content padding="true">
+    <div class="col text-center">
+      <ion-spinner ng-show="loading"></ion-spinner>
+    </div>
+
     <h1>{{pickalo.form.question}}</h1>
 
-    <div class="list card">
+    <div ng-hide="loading" class="list card">
       <li class="item" ng-repeat="answer in pickalo.answers">
         {{answer.option}} <span class="badge badge-assertive">{{answer.votes}}</span>
       </li>
