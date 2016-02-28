@@ -31,6 +31,8 @@ app.controller('IndexCtrl',
       fetchPickalos(ids, showPickalos);
     };
 
-    init();
+    $scope.$on("$ionicView.afterEnter", function() {
+      init();
+    });
   }
 );

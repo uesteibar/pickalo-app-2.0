@@ -1,11 +1,5 @@
 app.controller('NewCtrl',
   function($scope, $state, PickaloApiService, LocalStorageService) {
-    $scope.options = [];
-    $scope.input = {
-      question: '',
-      newOption: ''
-    };
-
     $scope.addOption = function(newOption) {
       $scope.options.push(newOption);
       $scope.input.newOption = '';
@@ -30,5 +24,13 @@ app.controller('NewCtrl',
         $state.go('show', {id: id});
       });
     };
+
+    $scope.$on("$ionicView.afterEnter", function() {
+      $scope.options = [];
+      $scope.input = {
+        question: '',
+        newOption: ''
+      };
+    });
   }
 );

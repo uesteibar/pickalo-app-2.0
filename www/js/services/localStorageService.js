@@ -2,11 +2,8 @@ app.service('LocalStorageService',
   function ($window) {
     var operations = {
       savePickalo: function (pickalo) {
-        console.log('hola');
         var allPickalos = operations.fetchAllPickalos();
-        console.log(allPickalos);
-        allPickalos.push(JSON.stringify(pickalo));
-        console.log(allPickalos);
+        allPickalos.push(pickalo);
         $window.localStorage["pickalos"] = JSON.stringify(allPickalos);
       },
       fetchAllPickalos: function() {
