@@ -4,14 +4,14 @@ app.service('PickaloApiService',
     var q = $q;
 
     return {
-      postPickalo: function (form) {
+      postPickalo: function(form) {
         var deferred = q.defer();
 
         $http.post(host + '/forms', {form: form})
           .success(function (data) {
-              deferred.resolve(data);
+            deferred.resolve(data);
           }).error(function (err) {
-              deferred.reject(err);
+            deferred.reject(err);
           });
 
         return deferred.promise;
@@ -21,9 +21,21 @@ app.service('PickaloApiService',
 
         $http.get(host + '/forms/' + id)
           .success(function (data) {
-              deferred.resolve(data);
+            deferred.resolve(data);
           }).error(function (err) {
-              deferred.reject(err);
+            deferred.reject(err);
+          });
+
+        return deferred.promise;
+      },
+      getPickalos: function(ids) {
+        var deferred = q.defer();
+
+        $http.get(host + '/forms?ids=' + ids.join())
+          .success(function (data) {
+            deferred.resolve(data);
+          }).error(function (err) {
+            deferred.reject(err);
           });
 
         return deferred.promise;

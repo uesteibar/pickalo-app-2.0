@@ -17,4 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/show.html',
     controller: 'ShowCtrl'
   });
+
+  $stateProvider.state('index', {
+    url: '/index',
+    templateUrl: 'templates/index.html',
+    controller: 'IndexCtrl'
+  });
 });

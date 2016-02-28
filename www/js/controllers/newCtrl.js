@@ -1,5 +1,5 @@
 app.controller('NewCtrl',
-  function($scope, $state, PickaloApiService) {
+  function($scope, $state, PickaloApiService, LocalStorageService) {
     $scope.options = [];
     $scope.input = {
       question: '',
@@ -7,7 +7,6 @@ app.controller('NewCtrl',
     };
 
     $scope.addOption = function(newOption) {
-      console.log(newOption);
       $scope.options.push(newOption);
       $scope.input.newOption = '';
     };
@@ -26,7 +25,9 @@ app.controller('NewCtrl',
 
       promise.then(function(res) {
         console.log(res);
-        $state.go('show', { id: res['form']['id']})
+        var id = res['form']['id'];
+        LocalStorageService.savePickalo({id: id});
+        $state.go('show', {id: id});
       });
     };
   }

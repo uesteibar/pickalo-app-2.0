@@ -1,7 +1,5 @@
 app.controller('ShowCtrl',
   function($scope, $stateParams, $cordovaSocialSharing, PickaloApiService) {
-    var id = 1;
-
     var init = function() {
       $scope.refreshPickalo();
     };

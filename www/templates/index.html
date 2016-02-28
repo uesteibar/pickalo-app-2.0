@@ -1,0 +1,13 @@
+<ion-view title="Results for your Pickalo">
+  <ion-content padding="true">
+    <div class="list">
+      <a ng-repeat="pickalo in pickalos" class="item item-icon-right" href="#/show/{{pickalo.form.id}}">
+        <h2>{{pickalo.form.question}}</h2>
+        <i class="icon ion-ios-arrow-right"></i>
+        <p>
+          {{pickalo.form.created_at | date : format : fullDate}}
+        </p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
