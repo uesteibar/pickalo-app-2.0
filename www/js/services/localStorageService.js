@@ -10,10 +10,12 @@ app.service('LocalStorageService',
         $window.localStorage["pickalos"] = JSON.stringify(allPickalos);
       },
       fetchAllPickalos: function() {
-        var pickalos = JSON.parse($window.localStorage["pickalos"]);
+        var pickalos = $window.localStorage["pickalos"];
         if (pickalos == undefined || pickalos == "") {
           pickalos = "[]";
         }
+
+        pickalos = JSON.parse(pickalos);
         for (var i = 0; i < pickalos.length; i++) {
           console.log(pickalos[i]);
           pickalos[i] = JSON.parse(pickalos[i]);
